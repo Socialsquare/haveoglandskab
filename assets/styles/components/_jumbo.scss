@@ -1,7 +1,9 @@
 .home .jumbo {
   height: 70vh;
   max-height: 120vw;
+  min-height: 20rem;
 }
+
 .jumbo {
   align-items: center;
   background-attachment: fixed;
@@ -11,17 +13,18 @@
   background-size: cover;
   color: $white;
   display: flex;
-  height: 40vh;
+  height: 35vh;
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
   max-height: 100vw;
-  min-height: 20rem;
+  min-height: 15rem;
   position: relative;
 
   &::before {
-    background: linear-gradient(rgba($black, .5), rgba($black, 0) 5rem),
-      linear-gradient(to top, rgba($black, .5), rgba($black, 0) 5rem),
-      linear-gradient(#267f62, #185150);
+    background: linear-gradient(rgba($black, .3), rgba($black, 0) 8rem),
+      linear-gradient(rgba($black, .4), rgba($black, 0) 4rem),
+      linear-gradient(to top, rgba($black, .3), rgba($black, 0) 8rem),
+      linear-gradient($gradient-start, $gradient-end);
     bottom: 0;
     content: '';
     left: 0;
