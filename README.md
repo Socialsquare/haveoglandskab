@@ -1,3 +1,15 @@
+# Have&Landskab
+
+Her følger den ikke-tekniske del af dokumentationen. Scroll ned til "Sage" for at læse den mere teksniske del.
+
+## Plugins
+
+Vi bruger nogle plugins for ekstra funktionalitet herunder:
+* [Advanced Custom Fields](https://wordpress.org/plugins/advanced-custom-fields/)
+
+
+----
+
 # [Sage](https://roots.io/sage/)
 [![Build Status](https://travis-ci.org/roots/sage.svg)](https://travis-ci.org/roots/sage)
 [![devDependency Status](https://david-dm.org/roots/sage/dev-status.svg)](https://david-dm.org/roots/sage#info=devDependencies)
