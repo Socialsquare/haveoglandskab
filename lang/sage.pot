@@ -5,7 +5,7 @@ msgstr ""
 
 #: 404.php:4
 msgid "Sorry, but the page you were trying to view does not exist."
-msgstr ""
+msgstr "Beklager, men siden du prøver at vise findes ikke."
 
 #: base.php:14
 msgid ""
