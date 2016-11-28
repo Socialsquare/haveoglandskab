@@ -12,6 +12,41 @@
 
 (function($) {
 
+  // Create parallax effect in jumbo
+  var parallaxIt = function () {
+
+    var $fwindow = $(window);
+    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    $fwindow.on('scroll resize', function() {
+      scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    });
+
+    $('.jumbo').each(function(){
+      var imageScrolled;
+      var yPos;
+      var coords;
+      var blur;
+      var $this = $(this);
+      var height = $this.height();
+
+      $fwindow.on('resize', function() {
+        height = $this.height();
+      });
+
+      $fwindow.on('scroll resize', function() {
+        if (scrollTop > 0 && scrollTop < height) {
+          imageScrolledPercent = scrollTop / height * 100;
+          yPos = 50 + imageScrolledPercent;
+          coords = '50% ' + yPos + '%';
+          $this.css({ backgroundPosition: coords });
+        }
+      });
+    });
+
+    // triggers winodw scroll for refresh
+    $fwindow.trigger('scroll');
+  };
+
   // Use this variable to set up the common and page specific functions. If you
   // rename this variable, you will also need to rename the namespace below.
   var Sage = {
@@ -22,6 +57,7 @@
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired
+        parallaxIt();
       }
     },
     // Home page
