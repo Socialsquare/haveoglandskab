@@ -19,9 +19,14 @@
     },
     "jquery.js": {
       "bower": ["jquery"]
+    },
+    "fonts": {
+      "files": [
+        "./fonts/*"
+      ]
     }
   },
   "config": {
-    "devUrl": "http://example.dev"
+    "devUrl": "http://haveoglandskab.dev"
   }
 }
