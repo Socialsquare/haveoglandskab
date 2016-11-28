@@ -1,10 +1,22 @@
 // Grid settings
-$enable-flex:           true;
-$main-sm-columns:       12;
-$sidebar-sm-columns:    4;
+$enable-flex: true;
+$main-sm-columns: 12;
+$sidebar-sm-columns: 4;
 
 // Colors
-$brand-primary:         #27ae60;
+$brand-primary: hsl(160, 100%, 25%);
+$gradient-start: hsl(160, 54%, 25%);
+$gradient-end: hsl(178, 54%, 20%);
+$gray-dark: hsl(160, 10%, 15%);
+$white: #fff;
+$black: #000;
+$body-bg: hsl(160, 1%, 95%);
+$footer-bg: hsl(160, 2%, 90%);
+
+// Options
+$enable-shadows: true;
 
 // Font
-$font-family-sans-serif: Avenir, "Avenir Next", "Helvetica Neue", "Segoe UI", Verdana, sans-serif;
+$font-size-root: 12px;
+$headings-font-weight: bold;
+$font-family-sans-serif: 'montserrat', Avenir, "Avenir Next", "Helvetica Neue", "Segoe UI", Verdana, sans-serif;

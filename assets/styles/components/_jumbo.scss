@@ -1,0 +1,69 @@
+.home .jumbo {
+  height: 70vh;
+  max-height: 120vw;
+}
+.jumbo {
+  align-items: center;
+  background-attachment: fixed;
+  background-color: $gray-dark;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: $white;
+  display: flex;
+  height: 40vh;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  max-height: 100vw;
+  min-height: 20rem;
+  position: relative;
+
+  &::before {
+    background: linear-gradient(rgba($black, .5), rgba($black, 0) 5rem),
+      linear-gradient(to top, rgba($black, .5), rgba($black, 0) 5rem),
+      linear-gradient(#267f62, #185150);
+    bottom: 0;
+    content: '';
+    left: 0;
+    opacity: .8;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  &__content {
+    width: 100%;
+    z-index: 1;
+  }
+
+  &__heading,
+  &__text {
+    text-shadow: 0 0 .5em rgba($black, .4), 0 0 1px rgba($black, .8);
+  }
+
+  &__text {
+    font-size: 1.6rem;
+  }
+
+  &__buttons {
+    bottom: 2rem;
+    position: absolute;
+
+    @include media-breakpoint-up(md) {
+      bottom: 3rem;
+    }
+  }
+
+  &__separator {
+    bottom: -1px; // because fuck safari that's why...
+    fill: $body-bg;
+    height: 1rem;
+    left: 0;
+    position: absolute;
+    width: 100%;
+
+    @include media-breakpoint-up(md) {
+      height: 2rem;
+    }
+  }
+}

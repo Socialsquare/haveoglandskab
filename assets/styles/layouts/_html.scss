@@ -1,0 +1,32 @@
+html {
+  @include media-breakpoint-up(sm) {
+    font-size: 13px;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: 14px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: 15px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    font-size: 16px;
+  }
+}
+
+// Flexbox sticky footer
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.wrap {
+  flex-grow: 1;
+}
+
+.container-fluid {
+  max-width: map-get($grid-breakpoints, xl);
+}

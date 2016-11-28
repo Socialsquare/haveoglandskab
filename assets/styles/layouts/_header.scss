@@ -1,0 +1,20 @@
+.banner {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  height: 0;
+  text-shadow: 0 0 .5em rgba($black, .4), 0 0 1px rgba($black, .8);
+  z-index: 1;
+
+  a,
+  a:hover {
+    color: $white;
+  }
+}
+
+.brand {
+  font-weight: bold;
+}
+
+.nav-primary {
+  float: right;
+}

@@ -1,0 +1,17 @@
+$icon-size: 2.5rem;
+
+.social-icon {
+  font-size: 0;
+
+  &__img {
+    height: $icon-size;
+    margin-top: .5rem;
+    width: $icon-size;
+  }
+
+  &__img-big {
+    float: left;
+    height: $icon-size * 2;
+    width: $icon-size * 2;
+  }
+}

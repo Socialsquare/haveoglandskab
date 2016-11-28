@@ -1,21 +1,23 @@
-@import "common/variables";
+@import 'common/variables';
 
 // Automatically injected Bower dependencies via wiredep (never manually edit this block)
 // bower:scss
 @import "../../bower_components/bootstrap/scss/bootstrap.scss";
 // endbower
 
-@import "common/global";
-@import "components/buttons";
-@import "components/comments";
-@import "components/forms";
-@import "components/grid";
-@import "components/wp-classes";
-@import "layouts/header";
-@import "layouts/sidebar";
-@import "layouts/footer";
-@import "layouts/pages";
-@import "layouts/posts";
-@import "layouts/tinymce";
-
-@import "custom/jumbo";
+@import 'common/global';
+@import 'common/fontface';
+@import 'components/buttons';
+@import 'components/comments';
+@import 'components/forms';
+@import 'components/grid';
+@import 'components/jumbo';
+@import 'components/social-icon';
+@import 'components/wp-classes';
+@import 'layouts/html';
+@import 'layouts/header';
+@import 'layouts/sidebar';
+@import 'layouts/footer';
+@import 'layouts/pages';
+@import 'layouts/posts';
+@import 'layouts/tinymce';

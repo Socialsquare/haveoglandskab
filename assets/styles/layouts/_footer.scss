@@ -1,0 +1,9 @@
+.footer {
+  background-color: $footer-bg;
+  color: rgba($gray-dark, .8);
+
+  a:hover,
+  a:focus {
+    color: inherit; // because bootstrap using e.g. a:hover
+  }
+}
