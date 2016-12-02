@@ -1,14 +1,14 @@
 .home .jumbo {
   height: 70vh;
   max-height: 120vw;
-  min-height: 20rem;
+  min-height: 25rem;
 }
 
 .jumbo {
   align-items: center;
-  background-attachment: fixed;
+  background-attachment: scroll;
   background-color: $gray-dark;
-  background-position: center;
+  background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
   color: $white;
