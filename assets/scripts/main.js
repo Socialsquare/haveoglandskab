@@ -20,8 +20,7 @@
       var $jumbo = $('.jumbo');
       var height = $jumbo.height();
       if (scrollTop > 0 && scrollTop < height) {
-        var imageScrolledPercent = scrollTop / height * 100;
-        var coords = '50% calc(50% + ' + imageScrolledPercent.toFixed(2) + 'px)';
+        var coords = '50% calc(50% + ' + scrollTop.toFixed(2) / 3 + 'px)';
         requestAnimationFrame(function() {
           $jumbo.css({ backgroundPosition: coords })
         });
