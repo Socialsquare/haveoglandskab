@@ -105,3 +105,49 @@ function logo( $atts ) {
   ), $atts );
 	return "<a href='{$a['url']}' target='_blank' class='social-icon'><img class='social-icon__img-big m-r-1' src='". get_template_directory_uri() . "/dist/images/{$a['logo']}.svg'/></a>";
 }
+
+// Brugerhåndtering
+
+add_filter( 'map_meta_cap', __NAMESPACE__ . '\\my_map_meta_cap', 10, 4 );
+
+function my_map_meta_cap( $caps, $cap, $user_id, $args ) {
+
+	/* If editing, deleting, or reading a udstiller, get the post and post type object. */
+	if ( 'edit_udstiller' == $cap || 'delete_udstiller' == $cap || 'read_udstiller' == $cap ) {
+		$post = get_post( $args[0] );
+		$post_type = get_post_type_object( $post->post_type );
+
+		/* Set an empty array for the caps. */
+		$caps = array();
+	}
+
+	/* If editing a udstiller, assign the required capability. */
+	if ( 'edit_udstiller' == $cap ) {
+		if ( $user_id == $post->post_author )
+			$caps[] = $post_type->cap->edit_posts;
+		else
+			$caps[] = $post_type->cap->edit_others_posts;
+	}
+
+	/* If deleting a udstiller, assign the required capability. */
+	elseif ( 'delete_udstiller' == $cap ) {
+		if ( $user_id == $post->post_author )
+			$caps[] = $post_type->cap->delete_posts;
+		else
+			$caps[] = $post_type->cap->delete_others_posts;
+	}
+
+	/* If reading a private udstiller, assign the required capability. */
+	elseif ( 'read_udstiller' == $cap ) {
+
+		if ( 'private' != $post->post_status )
+			$caps[] = 'read';
+		elseif ( $user_id == $post->post_author )
+			$caps[] = 'read';
+		else
+			$caps[] = $post_type->cap->read_private_posts;
+	}
+
+	/* Return the capabilities required by the user. */
+	return $caps;
+}
