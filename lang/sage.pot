@@ -74,11 +74,11 @@ msgstr ""
 
 #: templates/entry-meta.php:2
 msgid "By"
-msgstr ""
+msgstr "Af"
 
 #. Theme Name of the plugin/theme
-msgid "Sage Starter Theme"
-msgstr ""
+msgid "Have&Landskab Theme"
+msgstr "Have&Landskab Tema"
 
 #. Theme URI of the plugin/theme
 msgid "https://roots.io/sage/"
