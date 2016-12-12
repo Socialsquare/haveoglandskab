@@ -1,0 +1,13 @@
+dt,
+dd {
+  display: inline;
+}
+
+dt::after {
+  content: ':\00a0';
+}
+
+dd::after {
+  content: '\A';
+  white-space: pre;
+}

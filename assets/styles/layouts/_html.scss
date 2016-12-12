@@ -28,5 +28,6 @@ body {
 }
 
 .container-fluid {
-  max-width: map-get($grid-breakpoints, xl);
+  max-width: 100%;
+  width: map-get($grid-breakpoints, xl);
 }
