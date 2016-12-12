@@ -107,9 +107,7 @@ function logo( $atts ) {
 }
 
 // Brugerhåndtering
-
 add_filter( 'map_meta_cap', __NAMESPACE__ . '\\my_map_meta_cap', 10, 4 );
-
 function my_map_meta_cap( $caps, $cap, $user_id, $args ) {
 
 	/* If editing, deleting, or reading a udstiller, get the post and post type object. */
