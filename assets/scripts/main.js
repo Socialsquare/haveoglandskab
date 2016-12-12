@@ -22,7 +22,7 @@
       if (scrollTop > 0 && scrollTop < height) {
         var coords = '50% calc(50% + ' + scrollTop.toFixed(2) / 3 + 'px)';
         requestAnimationFrame(function() {
-          $jumbo.css({ backgroundPosition: coords })
+          $jumbo.css({ backgroundPosition: coords });
         });
       }
     });
@@ -39,7 +39,7 @@
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired
         requestAnimationFrame(function() {
-          parallaxIt()
+          parallaxIt();
         });
       }
     },
