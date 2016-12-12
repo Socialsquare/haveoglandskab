@@ -38,6 +38,34 @@ add_filter('excerpt_more', __NAMESPACE__ . '\\excerpt_more');
  * Have&Landskap custom
  */
 
+// Sort Udstillere overview alphabetically
+add_action('pre_get_posts', __NAMESPACE__ . '\\udstiller_default_order');
+function udstiller_default_order( $query ){
+  if( 'udstillere' == $query->get('post_type') ){
+  if( $query->get('orderby') == '' )
+     $query->set('orderby','title');
+  if( $query->get('order') == '' )
+     $query->set('order','ASC');
+  }
+}
+
+// Fjerne "arkiver:" label fra get_the_archive_title
+function my_theme_archive_title( $title ) {
+  if ( is_category() ) {
+    $title = single_cat_title( '', false );
+  } elseif ( is_tag() ) {
+    $title = single_tag_title( '', false );
+  } elseif ( is_author() ) {
+    $title = '<span class="vcard">' . get_the_author() . '</span>';
+  } elseif ( is_post_type_archive() ) {
+    $title = post_type_archive_title( '', false );
+  } elseif ( is_tax() ) {
+    $title = single_term_title( '', false );
+  }
+  return $title;
+}
+add_filter( 'get_the_archive_title', __NAMESPACE__ . '\\my_theme_archive_title' );
+
 // Allow shortcodes in widgets
 add_filter('widget_text', 'do_shortcode');
 
