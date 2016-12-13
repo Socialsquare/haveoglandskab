@@ -2,10 +2,32 @@
 
 Her følger den ikke-tekniske del af dokumentationen. Scroll ned til "Sage" for at læse den mere teksniske del.
 
+Styling: Please use variables as much as possible
+https://github.com/twbs/bootstrap/blob/v4-dev/scss/_variables.scss
+
+Online documentation:
+https://roots.io/sage/docs
+
+## Passwords etc.
+
+Are in the custom folder on google drive.
+
 ## Plugins
 
 Vi bruger nogle plugins for ekstra funktionalitet herunder:
-* [Advanced Custom Fields](https://wordpress.org/plugins/advanced-custom-fields/)
+* [Advanced Custom Fields](https://wordpress.org/plugins/advanced-custom-fields/) - bruges til at håndtere custom input felter til primært udstiller post type, men også fx undertitel
+* [adminimize](https://wordpress.org/plugins/adminimize/) - bruges til at sikre et minimalt UI for udstillere (bruger rolle forfatter)
+* [Disable comments](https://wordpress.org/plugins/disable-comments/) - because comments is soooo 2015
+* [Members](https://wordpress.org/plugins/members/) - bruges til at tilpasse admin og forfatter rolle så de er tilpasset udstiller custom post type
+
+## TL'DR
+
+You need to have a wordpress site running and add (or symlink) this inside the wp-content/themes folder.
+See other requirements below.
+
+`gulp && gulp watch` when you're developing
+
+`gulp --production` to get a clean dist folder
 
 
 ----
