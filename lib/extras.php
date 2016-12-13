@@ -42,6 +42,8 @@ add_filter('excerpt_more', __NAMESPACE__ . '\\excerpt_more');
 add_action('pre_get_posts', __NAMESPACE__ . '\\udstiller_default_order');
 function udstiller_default_order( $query ){
   if( 'udstillere' == $query->get('post_type') ){
+  // Disable pagination
+  $query->set('nopaging', 1);
   if( $query->get('orderby') == '' )
      $query->set('orderby','title');
   if( $query->get('order') == '' )
