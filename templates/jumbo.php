@@ -2,7 +2,7 @@
 
 <div class="jumbo m-b-3" style="background-image: url('<?php
   if ( has_post_thumbnail() ) {
-    echo the_post_thumbnail_url();
+    echo the_post_thumbnail_url($size = 'large');
   } else {
     echo get_template_directory_uri() . '/dist/images/default.jpg';
   }?>')">
