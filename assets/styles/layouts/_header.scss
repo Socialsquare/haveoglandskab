@@ -1,8 +1,11 @@
 .banner {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  height: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
   text-shadow: 0 0 .5em rgba($black, .4), 0 0 1px rgba($black, .8);
+  top: 0;
   z-index: 1;
 
   a,
