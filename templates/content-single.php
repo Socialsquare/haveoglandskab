@@ -17,7 +17,7 @@
     ?>
       <div class="entry-content">
         <?php if (!empty($logo)){
-          $logoUrl = $logo['sizes'][ 'medium' ];
+          $logoUrl = $logo['sizes'][ 'thumbnail' ];
           $src = 'src="' . $logoUrl . '"';
           $alt = 'alt="' . $logo['alt'] . '"';
           $class = 'class="udstiller__logo m-t-0 m-r-2"';
@@ -51,7 +51,7 @@
         <div class="row">
           <?php foreach ($billeder as $billede): ?>
             <?php if (!empty($billede)):
-              $src = 'src="' . $billede['sizes'][ 'medium' ] . '"';
+              $src = 'src="' . $billede['sizes'][ 'thumbnail' ] . '"';
               $alt = 'alt="' . $billede['alt'] . '"';
               $class = 'class="udstiller__eksempel m-t-2"';
               $description = $billede['description'];
