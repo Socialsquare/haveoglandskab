@@ -4,7 +4,7 @@
   "type": "wordpress-theme",
   "license": "MIT",
   "description": "Based on the Sage starter theme",
-  "homepage": "https://github.com/Socialsquare/haveoglandskab",
+  "homepage": "https://github.com/Socialsquare/haveoglandskab-theme",
   "authors": [
     {
       "name": "Ben Word",
@@ -27,14 +27,14 @@
   ],
   "source": {
     "type": "git",
-    "url": "git@github.com:Socialsquare/haveoglandskab.git",
+    "url": "git@github.com:Socialsquare/haveoglandskab-theme.git",
     "reference": "master"
   },
   "keywords": [
     "wordpress"
   ],
   "support": {
-    "issues": "https://github.com/Socialsquare/haveoglandskab/issues"
+    "issues": "https://github.com/Socialsquare/haveoglandskab-theme/issues"
   },
   "require": {
     "php": ">=5.4.0",
