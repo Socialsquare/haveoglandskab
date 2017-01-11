@@ -1,4 +1,8 @@
-node_modules
-bower_components
-vendor
-dist
+/wp-config.php
+vendor/
+wp-content/
+wp/
+theme/node_modules
+theme/bower_components
+theme/vendor
+theme/dist

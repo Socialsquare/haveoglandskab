@@ -1,0 +1,38 @@
+{
+  "name": "socialsquare/haveoglandskab-theme",
+  "version": "0.1",
+  "type": "wordpress-theme",
+  "license": "MIT",
+  "description": "Based on the Sage starter theme",
+  "homepage": "https://github.com/Socialsquare/haveoglandskab-theme",
+  "authors": [
+    {
+      "name": "Ben Word",
+      "email": "ben@benword.com",
+      "homepage": "https://github.com/retlehs"
+    }, {
+      "name": "Scott Walkinshaw",
+      "email": "scott.walkinshaw@gmail.com",
+      "homepage": "https://github.com/swalkinshaw"
+    }, {
+      "name": "Andreas Larsen",
+      "email": "andreas@socialsquare.dk"
+    }, {
+      "name": "Kraen Hansen",
+      "email": "kraen@socialsquare.dk"
+    }, {
+      "name": "Viktor Andersen",
+      "email": "viktor@socialsquare.dk"
+    }
+  ],
+  "keywords": [
+    "wordpress"
+  ],
+  "support": {
+    "issues": "https://github.com/Socialsquare/haveoglandskab-theme/issues"
+  },
+  "require": {
+    "php": ">=5.4.0",
+    "composer/installers": "~1.0"
+  }
+}
