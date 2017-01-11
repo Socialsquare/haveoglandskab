@@ -1,27 +1,40 @@
 {
-  "name": "roots/sage",
+  "name": "socialsquare/haveoglandskab-theme",
+  "version": "0.1",
   "type": "wordpress-theme",
   "license": "MIT",
-  "description": "The best WordPress starter theme with a modern front-end development workflow. Based on HTML5 Boilerplate, gulp, Bower, and Bootstrap.",
-  "homepage": "https://roots.io/sage/",
+  "description": "Based on the Sage starter theme",
+  "homepage": "https://github.com/Socialsquare/haveoglandskab",
   "authors": [
     {
       "name": "Ben Word",
       "email": "ben@benword.com",
       "homepage": "https://github.com/retlehs"
-    },
-    {
+    }, {
       "name": "Scott Walkinshaw",
       "email": "scott.walkinshaw@gmail.com",
       "homepage": "https://github.com/swalkinshaw"
+    }, {
+      "name": "Andreas Larsen",
+      "email": "andreas@socialsquare.dk"
+    }, {
+      "name": "Kraen Hansen",
+      "email": "kraen@socialsquare.dk"
+    }, {
+      "name": "Viktor Andersen",
+      "email": "viktor@socialsquare.dk"
     }
   ],
+  "source": {
+    "type": "git",
+    "url": "git@github.com:Socialsquare/haveoglandskab.git",
+    "reference": "master"
+  },
   "keywords": [
     "wordpress"
   ],
   "support": {
-    "issues": "https://github.com/roots/sage/issues",
-    "forum": "https://discourse.roots.io/"
+    "issues": "https://github.com/Socialsquare/haveoglandskab/issues"
   },
   "require": {
     "php": ">=5.4.0",
