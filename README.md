@@ -9,4 +9,5 @@ Danmarks største fagudstilling for den grønne branche
 4. Eksportér og importér "Adminimize" opsætning: http://www.haveoglandskab.dk/wp-admin/options-general.php?page=adminimize%2Fadminimize.php#import
 5. Overfør widgets til sidens footer: http://www.haveoglandskab.dk/wp-admin/widgets.php
 6. Aktivér "Visningsplacering: Primary Navigation" på siden http://dev.haveoglandskab.dk/wp/wp-admin/nav-menus.php
-7. Giv administratoren lov til at ændre udstillere:  http://dev.haveoglandskab.dk/wp/wp-admin/users.php?page=roles&action=edit&role=administrator
+7. Deaktivér de roller som ikke benyttes: http://dev.haveoglandskab.dk/wp/wp-admin/users.php?page=roles
+8. Giv administratoren lov til at ændre udstillere:  http://dev.haveoglandskab.dk/wp/wp-admin/users.php?page=roles&action=edit&role=administrator
