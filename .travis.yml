@@ -1,6 +1,5 @@
-language: php
-php:
-  - '5.5'
+dist: trusty
+sudo: false
 install:
   - composer install
   - nvm install -s
