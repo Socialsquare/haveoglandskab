@@ -27,6 +27,6 @@
     }
   },
   "config": {
-    "devUrl": "http://haveoglandskab.dev"
+    "devUrl": "http://dev.haveoglandskab.dk"
   }
 }
