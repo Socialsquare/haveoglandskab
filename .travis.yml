@@ -1,9 +1,7 @@
 language: php
 php:
   - '5.5'
-node_js:
-  - '7.3'
 install:
   - composer install
-  - nvm use
-  - npm install
+  - nvm install -s
+  - cd theme; npm install
