@@ -73,8 +73,14 @@ add_filter('widget_text', 'do_shortcode');
 
 // Button
 add_shortcode( 'button', __NAMESPACE__ . '\\button' );
-function button( $atts, $content = null ){
-  return "<div class='btn btn-white btn-lg m-r-1 m-b-1'>" . $content . "</div>";
+function button( $atts, $content = null ) {
+  $classes = 'btn btn-white btn-lg m-r-1 m-b-1';
+  if(isset($atts['href'])) {
+    $href = $atts['href'];
+    return "<a class='$classes' href='$href'>$content</a>";
+  } else {
+    return "<div class='$classes'>$content</div>";
+  }
 }
 
 // Columns
