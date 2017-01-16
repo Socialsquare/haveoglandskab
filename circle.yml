@@ -1,0 +1,15 @@
+machine:
+  node:
+    version: 6.1.0
+dependencies:
+  override:
+    - npm install
+    - composer install
+test:
+  override:
+    - echo "No tests"
+deployment:
+  production:
+    branch: production
+    commands:
+      - ./scripts/build.sh
