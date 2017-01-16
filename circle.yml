@@ -3,8 +3,8 @@ machine:
     version: 6.1.0
 dependencies:
   override:
-    - npm install
     - composer install
+    - cd theme; npm install
 test:
   override:
     - echo "No tests"
@@ -12,4 +12,4 @@ deployment:
   production:
     branch: production
     commands:
-      - ./scripts/build.sh
+      - ./scripts/deploy.sh
