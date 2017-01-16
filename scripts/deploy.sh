@@ -1,4 +1,11 @@
 #!/bin/bash
 echo "Deploying"
-echo $SSH_PRIVATE_KEY | base64 -d > ~/.ssh/id_haveoglandskab_dk
-cat ~/.ssh/id_haveoglandskab_dk
+rsync -rl --progress \
+  --exclude .git \
+  --exclude theme/node_modules \
+  --exclude theme/bower_components \
+  --exclude wp-content/uploads \
+  --exclude wp/wp-content \
+  --exclude wp-config.php \
+  --del \
+  . haveoglandskab.dk:www-test
