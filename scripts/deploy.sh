@@ -8,4 +8,4 @@ rsync -rl --progress \
   --exclude wp/wp-content \
   --exclude wp-config.php \
   --del \
-  . ssh.haveoglandskab.dk:www-test
+  . haveoglandskab.dk@ssh.haveoglandskab.dk:www-test
