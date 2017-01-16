@@ -1,18 +1,11 @@
 <?php use Roots\Sage\Titles; ?>
 
-<div class="jumbo m-b-3" style="background-image: url('<?php
-  if ( has_post_thumbnail() ) {
-    echo the_post_thumbnail_url($size = 'large');
-  } else {
-    echo get_template_directory_uri() . '/dist/images/default.jpg';
-  }?>')">
+<div class="jumbo m-b-3" style="background-image: url('<?= Titles\header_image() ?>')">
   <div class="jumbo__content container-fluid">
     <div class="row">
       <div class="col-md-9 col-lg-9">
         <h1 class="jumbo__heading"><?= Titles\title(); ?></h1>
-        <?php if(get_field('sub_title')) {
-          echo '<p class="jumbo__text">' . get_field('sub_title') . '</p>';
-        } ?>
+        <div class="jumbo__text"><?= Titles\sub_title(); ?> </div>
       </div>
     </div>
     <?php if(get_field('buttons')) {

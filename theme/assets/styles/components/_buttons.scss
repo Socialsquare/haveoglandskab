@@ -1,12 +1,16 @@
 .btn-white {
-  background-color: $white;
+  @extend .btn-white-flat;
   box-shadow: 0 .8rem 1.6rem rgba($black, .19), 0 .1rem .3rem rgba($black, .23);
-
-  a {
-    text-decoration: none;
-  }
 }
 
 a.btn-lg {
   margin: .5rem;
+}
+
+.btn-white-flat {  
+  background-color: $white;
+
+  a {
+    text-decoration: none;
+  }
 }

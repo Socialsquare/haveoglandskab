@@ -8,6 +8,7 @@ function create_posttype() {
 		array(
 			'public' => true,
 			'capability_type' => 'udstiller',
+			'description' => 'test',
 			'capabilities' => array(
 				'publish_posts' => 'publish_udstillere',
 				'edit_posts' => 'edit_udstillere',
