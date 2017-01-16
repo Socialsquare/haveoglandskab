@@ -6,6 +6,7 @@ install:
 script:
   - exit 0
 deploy:
+  skip_cleanup: true
   provider: script
   script: scripts/deploy.sh
   on:
