@@ -1,12 +1,13 @@
 dist: trusty
 sudo: false
-branches:
-  only:
-  - production
-before_install:
-  - nvm install -s
 install:
+  - nvm install -s
   - composer install
   - cd theme; npm install
 script:
   - exit 0
+deploy:
+  provider: script
+  script: scripts/deploy.sh
+  on:
+    branch: production
