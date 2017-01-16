@@ -1,0 +1,6 @@
+dist: trusty
+sudo: false
+install:
+  - composer install
+  - nvm install -s
+  - cd theme; npm install
