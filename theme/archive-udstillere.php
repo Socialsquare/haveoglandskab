@@ -1,8 +1,7 @@
-
 <?php // get_search_form(); ?>
 
 <div class='filter-bar'>
-  <h2> Filter:  </h2>
+  <h2> Kategorier:  </h2>
   <?php
     $terms = get_terms( array('taxonomy' => 'sector') );
   
