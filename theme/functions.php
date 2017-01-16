@@ -17,7 +17,8 @@ $sage_includes = [
   'lib/wrapper.php',           // Theme wrapper class
   'lib/customizer.php',        // Theme customizer
   'lib/custom-post-types.php', // Udstiller post type
-  'lib/custom-widgets.php'     // Dashboard widgets
+  'lib/custom-widgets.php',    // Dashboard widgets,
+  'lib/taxonomies.php',        // Taxonomies
 ];
 
 foreach ($sage_includes as $file) {

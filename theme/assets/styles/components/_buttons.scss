@@ -10,3 +10,10 @@
 a.btn-lg {
   margin: .5rem;
 }
+
+.btn-white-flat {
+  @extend .btn-white;
+  
+  box-shadow: 0;
+  margin: .25rem;
+}

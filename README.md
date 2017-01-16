@@ -11,3 +11,4 @@ Danmarks største fagudstilling for den grønne branche
 6. Aktivér "Visningsplacering: Primary Navigation" på siden http://dev.haveoglandskab.dk/wp/wp-admin/nav-menus.php
 7. Deaktivér de roller som ikke benyttes: http://dev.haveoglandskab.dk/wp/wp-admin/users.php?page=roles
 8. Giv administratoren lov til at ændre udstillere:  http://dev.haveoglandskab.dk/wp/wp-admin/users.php?page=roles&action=edit&role=administrator
+9. Angiv linkstruktur som 'måned og navn': http://dev.haveoglandskab.dk/wp/wp-admin/options-permalink.php

@@ -22,3 +22,23 @@ function title() {
     return get_the_title();
   }
 }
+
+function sub_title() {
+  if(is_archive()) {
+    return get_the_archive_description();
+  } else {
+    return '<p>' . get_field('sub_title') . '</p>';
+  }
+}
+
+function header_image() {
+  $default = get_template_directory_uri() . '/dist/images/default.jpg';
+
+  if(is_archive() ){
+    return $default;
+  } elseif ( has_post_thumbnail() ) {
+    return the_post_thumbnail_url($size = 'large');
+  } else {
+    return $default;
+  }
+}
