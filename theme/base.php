@@ -22,7 +22,35 @@ use Roots\Sage\Wrapper;
       <div class="content row">
         <main class="main">
           <?php
+            global $wp_query;
+            global $post;
+            $original_wp_query = $wp_query;
+            $original_post = $post;
+            $is_archive = is_archive();
+            if($is_archive) {
+              // Try fetching a page with the same name as the archive
+              // This is used as a way for the administrator to manage the
+              // content on the archives frontpage
+              $args = array(
+	              'post_type' => 'page',
+                'name' => get_queried_object()->name
+              );
+              $wp_query = new WP_Query( $args );
+              if($wp_query->have_posts()) {
+                $wp_query->the_post();
+                $post = get_post();
+              }
+            }
+            // Getting the jumbo template part to render the title
             get_template_part('templates/jumbo');
+            if($is_archive) {
+              // Print the content of the current page as well
+              get_template_part('templates/content-page');
+            }
+
+            // Restore the original WP_Query object
+            $wp_query = $original_wp_query;
+            $post = $original_post;
             include Wrapper\template_path();
           ?>
         </main><!-- /.main -->
