@@ -27,13 +27,14 @@ use Roots\Sage\Wrapper;
             $original_wp_query = $wp_query;
             $original_post = $post;
             $is_archive = is_archive();
-            if($is_archive) {
+            $queried_object = get_queried_object();
+            if($is_archive && get_class($queried_object) === 'WP_Post_Type') {
               // Try fetching a page with the same name as the archive
               // This is used as a way for the administrator to manage the
               // content on the archives frontpage
               $args = array(
 	              'post_type' => 'page',
-                'name' => get_queried_object()->name
+                'name' => $queried_object->name
               );
               $wp_query = new WP_Query( $args );
               if($wp_query->have_posts()) {
