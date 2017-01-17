@@ -31,6 +31,15 @@ define('DB_HOST', '');
 define('DB_CHARSET', '');
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
+
+/**
+ * WordPress Database Table prefix.
+ *
+ * You can have multiple installations in one database if you give each
+ * a unique prefix. Only numbers, letters, and underscores please!
+ */
+$table_prefix = 'wp_';
+
 /**#@+
  * Authentication Unique Keys and Salts.
  *

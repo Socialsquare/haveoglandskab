@@ -25,14 +25,6 @@ define('DISALLOW_FILE_MODS', true);
 define('DISALLOW_FILE_EDIT', true);
 
 /**
- * WordPress Database Table prefix.
- *
- * You can have multiple installations in one database if you give each
- * a unique prefix. Only numbers, letters, and underscores please!
- */
-$table_prefix = isset($table_prefix) ? $table_prefix : 'wp_';
-
-/**
  * For developers: WordPress debugging mode.
  *
  * Change this to true to enable the display of notices during development.
