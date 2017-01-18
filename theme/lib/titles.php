@@ -25,7 +25,9 @@ function title() {
 
 function sub_title() {
   if(is_archive()) {
-    return get_the_archive_description();
+    // The sub title of the first post 
+    // is fetched if we don't do this.
+    return; 
   } else {
     return '<p>' . get_field('sub_title') . '</p>';
   }
