@@ -11,8 +11,10 @@ function sector_init() {
 				'slug' => 'branche',
 				'hierarchical' => true, ),
 			'capabilities' => array(
-				'assign_terms' => 'publish_udstillere',
-				'edit_terms' => 'edit_udstillere'
+				'manage_terms' => 'manage_udstiller',
+				'edit_terms' => 'edit_udstiller',
+				'delete_terms' => 'delete_udstiller',
+				'assign_terms' => 'assign_udstiller',
 			)
 		)
 	);

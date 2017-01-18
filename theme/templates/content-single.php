@@ -1,10 +1,10 @@
 <?php while (have_posts()) : the_post(); ?>
   <article <?php post_class(); ?>>
     <?php if ( is_singular( 'udstillere' ) ):
+      $categories = wp_get_post_terms($post->ID, 'sector', array("fields" => "names"));
+      
       $logo = get_field('udstiller_logo');
       $stand = get_field('udstiller_stand');
-      $categori = get_field('udstiller_kategori');
-      $categories = get_field_object('udstiller_kategori');
       $homepage = get_field('udstiller_hjemmeside');
       $description = get_field('udstiller_beskrivelse');
       $events = get_field('udstiller_events');
@@ -28,9 +28,8 @@
             if ($stand){
               echo '<dt>Stand</dt><dd>' . $stand . '</dd>';
             }
-            if ($categori){
-              $label = $categories['choices'][$categori];
-              echo '<dt>Kategori</dt><dd>' . $label . '</dd>';
+            if (isset($categories[0])){
+              echo '<dt>Branche</dt><dd>' . $categories[0] . '</dd>';
             }
             if ($homepage){
               $homepage = trim($homepage, '/');
