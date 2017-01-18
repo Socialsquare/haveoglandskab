@@ -1,12 +1,19 @@
 <?php // get_search_form(); ?>
 
 <div class="filter-bar">
-  <h2>Filtrér efter branche</h2>
-  <?php
-  $terms = get_terms( array('taxonomy' => 'sector') );
-  foreach ($terms as $term) {
-    echo '<a class="btn btn-white-flat filter-bar__btn" href="/branche/' . $term->slug . '">' .$term->name. '</a>';
-  }
+  <?php 
+  $taxonomies = get_object_taxonomies('udstillere', 'objects');
+  
+  foreach ($taxonomies as $taxonomy) {
+    $terms = get_terms( array('taxonomy' => $taxonomy->name) );
+    if(count($terms) > 0) echo '<h2 class="filter-bar__header">Filtrér efter '.strtolower($taxonomy->label).'</h2>';
+    foreach ($terms as $term) {
+      echo 
+      "<a class='btn btn-white-flat filter-bar__btn' href='/{$taxonomy->rewrite['slug']}/{$term->slug}'>
+        {$term->name} 
+      </a>";
+    }
+  } 
   ?>
 </div>
 
