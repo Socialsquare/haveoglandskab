@@ -11,7 +11,7 @@ function sector_init() {
 				'slug' => 'branche',
 				'hierarchical' => true, ),
 			'capabilities' => array(
-				'assign_terms' => 'publish_udstillere',
+				'assign_terms' => 'edit_udstillere',
 				'edit_terms'   => 'edit_udstillere',
 			)
 		)
@@ -31,7 +31,7 @@ function area_init() {
 				'slug' => 'area',
 				'hierarchical' => true, ),
 			'capabilities' => array(
-				'assign_terms' => 'publish_udstillere',
+				'assign_terms' => 'edit_udstillere',
 				'edit_terms'   => 'edit_udstillere',
 			)
 		)
