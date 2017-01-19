@@ -17,7 +17,7 @@
   ?>
 </div>
 
-<h2>Alle udstillere</h2>
+<h3>Alle udstillere</h3>
 <?php
   echo '<ul class="udstiller__list row">';
   while (have_posts()) : the_post();
