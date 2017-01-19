@@ -6,7 +6,7 @@
   
   foreach ($taxonomies as $taxonomy) {
     $terms = get_terms( array('taxonomy' => $taxonomy->name) );
-    if(count($terms) > 0) echo '<h2 class="filter-bar__header">Filtrér efter '.strtolower($taxonomy->label).'</h2>';
+    if(count($terms) > 0) echo '<h4 class="filter-bar__header">Filtrér efter '.strtolower($taxonomy->label).'</h4>';
     foreach ($terms as $term) {
       echo 
       "<a class='btn btn-white-flat filter-bar__btn' href='/{$taxonomy->rewrite['slug']}/{$term->slug}'>
