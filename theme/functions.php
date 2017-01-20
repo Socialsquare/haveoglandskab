@@ -19,6 +19,7 @@ $sage_includes = [
   'lib/custom-post-types.php', // Udstiller post type
   'lib/custom-widgets.php',    // Dashboard widgets,
   'lib/taxonomies.php',        // Taxonomies
+  'lib/buttons.php',           // Custom buttons
 ];
 
 foreach ($sage_includes as $file) {
