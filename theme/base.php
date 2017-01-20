@@ -34,7 +34,7 @@ use Roots\Sage\Wrapper;
               // content on the archives frontpage
               $args = array(
 	              'post_type' => 'page',
-                'name' => $queried_object->name
+                'name' => $queried_object->rewrite['slug']
               );
               $wp_query = new WP_Query( $args );
               if($wp_query->have_posts()) {
