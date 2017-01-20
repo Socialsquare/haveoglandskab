@@ -28,11 +28,11 @@ function area_init() {
 			'label' => __( 'Område' ),
 			'meta_box_cb' => false,
 			'rewrite' => array( 
-				'slug' => 'area',
+				'slug' => 'område',
 				'hierarchical' => true, ),
 			'capabilities' => array(
 				'assign_terms' => 'edit_udstillere',
-				'edit_terms'   => 'edit_udstillere',
+				'edit_terms'   => 'publish_udstillere',
 			)
 		)
 	);
