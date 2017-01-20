@@ -12,7 +12,7 @@ function sector_init() {
 				'hierarchical' => true, ),
 			'capabilities' => array(
 				'assign_terms' => 'edit_udstillere',
-				'edit_terms'   => 'edit_udstillere',
+				'edit_terms'   => 'publish_udstillere',
 			)
 		)
 	);
