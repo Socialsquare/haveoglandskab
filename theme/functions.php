@@ -20,6 +20,7 @@ $sage_includes = [
   'lib/custom-widgets.php',    // Dashboard widgets,
   'lib/taxonomies.php',        // Taxonomies
   'lib/buttons.php',           // Custom buttons
+  'lib/youtube.php',           // Youtube videos
 ];
 
 foreach ($sage_includes as $file) {

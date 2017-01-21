@@ -20,6 +20,11 @@
     "jquery.js": {
       "bower": ["jquery"]
     },
+    "youtube.js": {
+      "files": [
+        "scripts/youtube.js"
+      ]
+    },
     "fonts": {
       "files": [
         "./fonts/*"
