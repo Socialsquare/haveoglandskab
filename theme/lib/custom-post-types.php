@@ -40,7 +40,7 @@ function create_posttype() {
 				'thumbnail',
 				'title',
 				'author'
-			),
+			)
 		)
 	);
 }
