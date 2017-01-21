@@ -86,12 +86,12 @@ function button( $atts, $content = null ) {
 // Columns
 add_shortcode( 'column', __NAMESPACE__ . '\\column' );
 function column( $atts, $content = null ) {
-	return "<div class='col-sm-6'>" . $content . "</div>";
+	return "<div class='col-sm-6'>" . do_shortcode($content) . "</div>";
 }
 
 add_shortcode( 'column-wide', __NAMESPACE__ . '\\columnWide' );
 function columnWide( $atts, $content = null ) {
-	return "<div class='col-xs-12'>" . $content . "</div>";
+	return "<div class='col-xs-12'>" . do_shortcode($content) . "</div>";
 }
 
 // Social Icons
