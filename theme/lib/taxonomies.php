@@ -49,12 +49,12 @@ function area_init() {
 				'view_item' => __( 'Se område' ),
 			),
 			'meta_box_cb' => false,
-			'rewrite' => array(
-				'slug' => 'area',
+			'rewrite' => array( 
+				'slug' => 'område',
 				'hierarchical' => true, ),
 			'capabilities' => array(
 				'assign_terms' => 'edit_udstillere',
-				'edit_terms'   => 'edit_udstillere',
+				'edit_terms'   => 'publish_udstillere',
 			)
 		)
 	);

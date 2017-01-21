@@ -12,6 +12,16 @@
       ],
       "main": true
     },
+    "activities.js": {
+      "files": [
+        "scripts/activities.js",
+        "../bower_components/moment/locale/da.js"
+      ],
+      "bower": [
+        "moment",
+        "fullcalendar"
+      ]
+    },
     "customizer.js": {
       "files": [
         "scripts/customizer.js"
