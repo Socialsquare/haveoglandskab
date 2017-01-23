@@ -1,10 +1,15 @@
 <?php while (have_posts()) : the_post(); ?>
   <article <?php post_class(); ?>>
     <?php if ( is_singular( 'udstillere' ) ):
-      $categories = wp_get_post_terms($post->ID, 'sector', array("fields" => "names"));
-      
+      $sectors = get_the_terms($post->ID, 'sector');
+      $areas = get_the_terms($post->ID, 'area');
+
+      function get_term_name($term) {
+        return $term->name;
+      }
+
       $logo = get_field('udstiller_logo');
-      $stand = get_field('udstiller_stand');
+      $stand_nummer = get_field('udstiller_stand');
       $homepage = get_field('udstiller_hjemmeside');
       $description = get_field('udstiller_beskrivelse');
       $events = get_field('udstiller_events');
@@ -14,6 +19,12 @@
       $billede3 = get_field('udstiller_eksempel_billede_3');
       $billede4 = get_field('udstiller_eksempel_billede_4');
       $billeder = array($billede1, $billede2, $billede3, $billede4);
+
+      if(!empty($areas)) {
+        $first_area = $areas[0];
+        $area_letter = get_field('letter', 'area_' . $first_area->term_id);
+      }
+      $standplads = $area_letter . $stand_nummer;
     ?>
       <div class="entry-content">
         <?php if (!empty($logo)){
@@ -25,11 +36,16 @@
         }?>
         <dl class="udstiller__table">
           <?php
-            if ($stand){
-              echo '<dt>Stand</dt><dd>' . $stand . '</dd>';
+            if ($standplads) {
+              echo '<dt>Stand</dt><dd>' . $standplads . '</dd>';
             }
-            if (isset($categories[0])){
-              echo '<dt>Branche</dt><dd>' . $categories[0] . '</dd>';
+            if (!empty($sectors)){
+              $sector_names = array_map('get_term_name', $sectors);
+              echo '<dt>Branche</dt><dd>' . implode($sector_names, ', ') . '</dd>';
+            }
+            if (!empty($areas)){
+              $area_names = array_map('get_term_name', $areas);
+              echo '<dt>Område</dt><dd>' . implode($area_names, ', ') . '</dd>';
             }
             if ($homepage){
               $homepage = trim($homepage, '/');
