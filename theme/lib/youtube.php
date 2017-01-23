@@ -35,9 +35,11 @@ function youtube( $atts, $content = null ) {
     if(isset($video_id)) {
       $src .= $video_id;
     }
+    $src .= '?';
     if(isset($playlist_id)) {
-      $src .= '?list=' . $playlist_id;
+      $src .= 'list=' . $playlist_id . '&';
     }
+    $src .= 'rel=0&modestbranding=1&hd=1';
     $attributes = array(
       "class" => "youtube-video",
       "width" => "100%",
