@@ -44,7 +44,9 @@ use Roots\Sage\Wrapper;
             }
             // Getting the jumbo template part to render the title
             get_template_part('templates/jumbo');
-            if($is_archive) {
+
+            // Let's print the content of the page, if we found a page there
+            if($post !== $original_post) {
               // Print the content of the current page as well
               get_template_part('templates/content-page');
             }
