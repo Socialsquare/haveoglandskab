@@ -23,8 +23,10 @@
       if(!empty($areas)) {
         $first_area = $areas[0];
         $area_letter = get_field('letter', 'area_' . $first_area->term_id);
+        $standplads = $area_letter . $stand_nummer;
+      } else {
+        $standplads = $stand_nummer;
       }
-      $standplads = $area_letter . $stand_nummer;
     ?>
       <div class="entry-content">
         <?php if (!empty($logo)){
@@ -37,15 +39,17 @@
         <dl class="udstiller__table">
           <?php
             if ($standplads) {
-              echo '<dt>Stand</dt><dd>' . $standplads . '</dd>';
+              echo '<dt>Stand</dt><dd>';
+              echo $standplads;
+              if (!empty($areas)){
+                $area_names = array_map('get_term_name', $areas);
+                echo ' (' . implode($area_names, ', ') . ')';
+              }
+              echo '</dd>';
             }
             if (!empty($sectors)){
               $sector_names = array_map('get_term_name', $sectors);
               echo '<dt>Branche</dt><dd>' . implode($sector_names, ', ') . '</dd>';
-            }
-            if (!empty($areas)){
-              $area_names = array_map('get_term_name', $areas);
-              echo '<dt>Område</dt><dd>' . implode($area_names, ', ') . '</dd>';
             }
             if ($homepage){
               $homepage = trim($homepage, '/');
