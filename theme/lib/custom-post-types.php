@@ -52,17 +52,17 @@ function create_post_type_activity() {
 		array(
 			'public' => true,
 			'publicly_queryable' => true,
-			'capability_type' => 'aktivitet',
+			'capability_type' => 'activity',
 			'capabilities' => array(
-				'publish_posts' => 'publish_aktiviteter',
-				'edit_posts' => 'edit_aktiviteter',
-				'edit_others_posts' => 'edit_others_aktiviteter',
-				'delete_posts' => 'delete_aktiviteter',
-				'delete_others_posts' => 'delete_others_aktiviteter',
-				'read_private_posts' => 'read_private_aktiviteter',
-				'edit_post' => 'edit_aktivitet',
-				'delete_post' => 'delete_aktivitet',
-				'read_post' => 'read_aktivitet',
+				'publish_posts' => 'publish_activities',
+				'edit_posts' => 'edit_activities',
+				'edit_others_posts' => 'edit_others_activities',
+				'delete_posts' => 'delete_activities',
+				'delete_others_posts' => 'delete_others_activities',
+				'read_private_posts' => 'read_private_activities',
+				'edit_post' => 'edit_activity',
+				'delete_post' => 'delete_activity',
+				'read_post' => 'read_activity',
 			),
 			'labels' => array(
 				'add_new_item' => __( 'Tilføj ny aktivitet' ),
@@ -84,4 +84,3 @@ function create_post_type_activity() {
 	);
 }
 add_action( 'init', 'create_post_type_activity' );
-
