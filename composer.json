@@ -1,4 +1,3 @@
-
 {
   "name": "socialsquare/haveoglandskab-website",
   "description": "Danmarks største fagudstilling for den grønne branch",
@@ -19,11 +18,13 @@
     "koodimonni-language/core-da_dk": "^4.7",
     "php": ">=5.4.0",
     "socialsquare/haveoglandskab-theme": "^0.1",
+    "wpackagist-plugin/acf-field-date-time-picker": "^2.1",
     "wpackagist-plugin/adminimize": ">=1.11.2",
     "wpackagist-plugin/advanced-custom-fields": ">=4.4.11",
     "wpackagist-plugin/disable-comments": ">=1.6",
     "wpackagist-plugin/members": ">=1.1.2",
-    "wpackagist-plugin/wordpress-importer": ">=0.6.3"
+    "wpackagist-plugin/wordpress-importer": ">=0.6.3",
+    "wpackagist-plugin/debug-bar": "^0.8.4"
   },
   "extra": {
     "wordpress-install-dir": "wp",
