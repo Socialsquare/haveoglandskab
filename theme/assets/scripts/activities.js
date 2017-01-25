@@ -88,7 +88,10 @@
         eventAfterAllRender: function(view) {
           $calendar = view.el;
           var $listTable = $calendar.find('.fc-list-table');
-          $calendar.height($listTable.height() + 2);
+          var newHeight = $listTable.height() + 2;
+          $calendar.fullCalendar('option', 'height', newHeight);
+          $calendar.find('.fc-scroller').height(newHeight);
+          $calendar.height(newHeight);
         }
     });
   });
