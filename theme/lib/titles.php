@@ -33,7 +33,7 @@ function format_date($date, $include_day = false, $split = "") {
   if($split) {
     $result .= $split;
   }
-  $result .= $date->format('H:m');
+  $result .= $date->format('H:i');
   return $result;
 }
 
