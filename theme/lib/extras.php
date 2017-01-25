@@ -3,6 +3,7 @@
 namespace Roots\Sage\Extras;
 
 use Roots\Sage\Setup;
+use WP_Query;
 
 /**
  * Add <body> classes
@@ -113,3 +114,39 @@ function logo( $atts ) {
   ), $atts );
 	return "<a href='{$a['url']}' target='_blank' class='social-icon'><img class='social-icon__img-big m-r-1' src='". get_template_directory_uri() . "/dist/images/{$a['logo']}.svg'/></a>";
 }
+
+/**
+ * Redirect user after successful login.
+ *
+ * @param string $redirect_to URL to redirect to.
+ * @param string $request URL the user is coming from.
+ * @param object $user Logged user's data.
+ * @return string
+ */
+function udstiller_login_redirect( $redirect_to, $request, $user ) {
+	// is there a user to check?
+	if ( isset( $user->roles ) && is_array( $user->roles ) ) {
+		// check for admins
+		if ( in_array( 'author', $user->roles ) ) {
+      // Determine if this author has authored an "udstiller"
+      $udstiller_query = new WP_Query(array(
+        'author' => $user->ID,
+        'post_type' => 'udstillere'
+      ));
+      if($udstiller_query->have_posts()) {
+  			$udstiller_query->the_post();
+        return get_permalink($udstiller_query->ID);
+      } else {
+  			// redirect them to the default place
+			  return $redirect_to;
+      }
+		} else {
+			// redirect them to the default place
+      return $redirect_to;
+		}
+	} else {
+		return $redirect_to;
+	}
+}
+
+add_filter( 'login_redirect', __NAMESPACE__ . '\\udstiller_login_redirect', 10, 3 );
