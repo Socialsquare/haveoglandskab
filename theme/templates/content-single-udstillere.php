@@ -21,8 +21,8 @@ $billeder = array($billede1, $billede2, $billede3, $billede4);
 $activities = get_posts(array(
 	'numberposts'	=> -1,
 	'post_type'		=> 'activity',
-  'meta_key'		=> 'place',
-	'meta_value'	=> $post->name
+  'meta_key'		=> 'udstiller',
+	'meta_value'	=> $post->ID
 ));
 
 if(!empty($activities)) {
