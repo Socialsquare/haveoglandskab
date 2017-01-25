@@ -8,7 +8,7 @@ function get_term_name_and_link($term) {
 }
 
 $logo = get_field('udstiller_logo');
-$stand_nummer = get_field('udstiller_stand');
+$stand = get_field('udstiller_stand');
 $homepage = get_field('udstiller_hjemmeside');
 $description = get_field('udstiller_beskrivelse');
 $youtube = get_field('udstiller_youtube');
@@ -29,14 +29,6 @@ if(!empty($activities)) {
   wp_enqueue_style('fullcalendar');
   wp_enqueue_script('activities');
 }
-
-if(!empty($areas)) {
-  $first_area = $areas[0];
-  $area_letter = get_field('letter', 'area_' . $first_area->term_id);
-  $standplads = $area_letter . $stand_nummer;
-} else {
-  $standplads = $stand_nummer;
-}
 ?>
 <div class="entry-content">
   <?php if (!empty($logo)){
@@ -48,14 +40,14 @@ if(!empty($areas)) {
   }?>
   <dl class="udstiller__table">
     <?php
-      if ($standplads) {
+      if ($stand) {
         echo '<dt>Stand</dt><dd>';
-        echo $standplads;
+        if (!empty($areas)){
+          $area_names = array_map('get_term_name_and_link', $areas);
+          echo implode($area_names, ', ') . ' ';
+        }
+        echo $stand;
         echo '</dd>';
-      }
-      if (!empty($areas)){
-        $area_names = array_map('get_term_name_and_link', $areas);
-        echo '<dt>Område</dt><dd>' . implode($area_names, ', ') . '</dd>';
       }
       if (!empty($sectors)){
         $sector_names = array_map('get_term_name_and_link', $sectors);

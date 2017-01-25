@@ -26,16 +26,8 @@ function get_term_name($term) {
     $udstiller = get_field('udstiller');
     if($udstiller):
       $description = get_field('udstiller_beskrivelse', $udstiller->ID);
-      $stand_nummer = get_field('udstiller_stand', $udstiller->ID);
+      $stand = get_field('udstiller_stand', $udstiller->ID);
       $areas = get_the_terms($udstiller->ID, 'area');
-
-      if(!empty($areas)) {
-        $first_area = $areas[0];
-        $area_letter = get_field('letter', 'area_' . $first_area->term_id);
-        $standplads = $area_letter . $stand_nummer;
-      } else {
-        $standplads = $stand_nummer;
-      }
       ?>
       <div class="card udstiller-card">
         <div class="card-header">
@@ -67,13 +59,22 @@ function get_term_name($term) {
             <dt>Stand</dt>
             <dd>
               <?php
-              echo $standplads;
-              if (!empty($areas)) {
-                $area_names = array_map('get_term_name', $areas);
-                echo ' (' . implode($area_names, ', ') . ')';
-              }
+              echo $stand;
               ?>
             </dd>
+            <?php
+            if (!empty($areas)):
+            ?>
+            <dt>Område</dt>
+            <dd>
+              <?php
+              $area_names = array_map('get_term_name', $areas);
+              echo implode($area_names, ', ');
+              ?>
+            </dd>
+            <?php
+            endif;
+            ?>
           </p>
           <a href="<?= get_permalink($udstiller) ?>" class="btn btn-primary">Læs mere om udstilleren</a>
         </div>
