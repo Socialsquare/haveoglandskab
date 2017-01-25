@@ -26,6 +26,7 @@ $activities = get_posts(array(
 ));
 
 if(!empty($activities)) {
+  wp_enqueue_style('fullcalendar');
   wp_enqueue_script('activities');
 }
 

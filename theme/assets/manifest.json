@@ -35,6 +35,11 @@
         "scripts/youtube.js"
       ]
     },
+    "fullcalendar.css": {
+      "bower": [
+        "fullcalendar"
+      ]
+    },
     "fonts": {
       "files": [
         "./fonts/*"
