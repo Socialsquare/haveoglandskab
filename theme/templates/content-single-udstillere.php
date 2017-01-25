@@ -18,6 +18,11 @@ $billede3 = get_field('udstiller_eksempel_billede_3');
 $billede4 = get_field('udstiller_eksempel_billede_4');
 $billeder = array($billede1, $billede2, $billede3, $billede4);
 
+// Filter out images that are not uploaded correctly
+$billeder = array_filter($billeder, function($billede) {
+  return !empty($billede['mime_type']);
+});
+
 $activities = get_posts(array(
 	'numberposts'	=> -1,
 	'post_type'		=> 'activity',
@@ -70,7 +75,8 @@ if(!empty($activities)) {
     echo '<p>' . $description . '</p>';
   }?>
   <div class="row">
-    <?php foreach ($billeder as $billede): ?>
+    <?php
+     foreach ($billeder as $billede): ?>
       <?php if (!empty($billede)):
         $src = 'src="' . $billede['sizes'][ 'thumbnail' ] . '"';
         $alt = 'alt="' . $billede['alt'] . '"';

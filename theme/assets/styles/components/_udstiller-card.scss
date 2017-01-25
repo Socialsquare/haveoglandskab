@@ -1,10 +1,14 @@
 .udstiller-card {
   &__images {
     position: relative;
+    background: linear-gradient($gradient-start, $gradient-end);
+    max-height: 30vh;
+    overflow: hidden;
   }
 
   &__featured-image {
-    max-width: 100%;
+    width: 100%;
+    opacity: .3;
   }
 
   &__logo-image {

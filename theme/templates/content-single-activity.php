@@ -38,14 +38,14 @@ function get_term_name($term) {
           // Display the featured image, if any
           $thumbnail_id = get_post_thumbnail_id($udstiller->ID);
           if($thumbnail_id):
-            $thumbnail_url = wp_get_attachment_image_url($thumbnail_id);
+            $thumbnail_url = wp_get_attachment_image_url($thumbnail_id, 'medium');
             ?>
             <img class="udstiller-card__featured-image" src="<?= $thumbnail_url ?>">
             <?php
           endif;
           // Display the logo image, if any
           $logo = get_field('udstiller_logo', $udstiller->ID);
-          if($logo):
+          if($logo && !empty($logo['mime_type'])):
             $logo_url = $logo['sizes']['thumbnail'];
             ?>
             <img class="udstiller-card__logo-image" src="<?= $logo_url ?>">
