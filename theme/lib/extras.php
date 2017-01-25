@@ -150,3 +150,15 @@ function udstiller_login_redirect( $redirect_to, $request, $user ) {
 }
 
 add_filter( 'login_redirect', __NAMESPACE__ . '\\udstiller_login_redirect', 10, 3 );
+
+function haveoglandskab_login_logo() {
+  $logo_url = get_stylesheet_directory_uri() . '/dist/images/haveoglandskab.svg';
+  ?>
+  <style type="text/css">
+  #login h1 a, .login h1 a {
+    background-image: url('<?=$logo_url?>');
+  }
+  </style>
+  <?php
+}
+add_action( 'login_enqueue_scripts', __NAMESPACE__ . '\\haveoglandskab_login_logo' );
