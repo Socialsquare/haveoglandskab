@@ -101,5 +101,8 @@ function assets() {
   }
 
   wp_enqueue_script('sage/js', Assets\asset_path('scripts/main.js'), ['jquery'], null, true);
+
+  // Register the activities script for later use
+  wp_register_script('activities', Assets\asset_path('scripts/activities.js'), ['jquery'], null, true);
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);

@@ -17,6 +17,8 @@ $sage_includes = [
   'lib/wrapper.php',           // Theme wrapper class
   'lib/customizer.php',        // Theme customizer
   'lib/custom-post-types.php', // Udstiller post type
+  'lib/map-meta-cap.php',      // Needed to fix permissions on custom post types
+  'lib/rest-api.php',          // Alters the rest API for custom post types
   'lib/custom-widgets.php',    // Dashboard widgets,
   'lib/taxonomies.php',        // Taxonomies
   'lib/buttons.php',           // Custom buttons

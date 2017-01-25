@@ -4,9 +4,12 @@
 // bower:scss
 @import "../../bower_components/bootstrap/scss/bootstrap.scss";
 // endbower
+// Manually imported
+@import "../../bower_components/fullcalendar/dist/fullcalendar.css";
 
-@import 'common/global';
 @import 'common/fontface';
+@import 'common/global';
+@import 'components/activity-calendar';
 @import 'components/buttons';
 @import 'components/comments';
 @import 'components/filter-bar';
@@ -15,12 +18,13 @@
 @import 'components/jumbo';
 @import 'components/social-icon';
 @import 'components/tables';
+@import 'components/udstiller-card';
 @import 'components/wp-classes';
-@import 'layouts/html';
-@import 'layouts/header';
-@import 'layouts/sidebar';
 @import 'layouts/footer';
+@import 'layouts/header';
+@import 'layouts/html';
 @import 'layouts/pages';
 @import 'layouts/posts';
+@import 'layouts/sidebar';
 @import 'layouts/tinymce';
 @import 'layouts/udstiller';

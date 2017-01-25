@@ -40,6 +40,9 @@ use Roots\Sage\Wrapper;
               if($wp_query->have_posts()) {
                 $wp_query->the_post();
                 $post = get_post();
+              } else {
+                // Otherwise - restore the original query
+                $wp_query = $original_wp_query;
               }
             }
             // Getting the jumbo template part to render the title
@@ -54,6 +57,7 @@ use Roots\Sage\Wrapper;
             // Restore the original WP_Query object
             $wp_query = $original_wp_query;
             $post = $original_post;
+            setup_postdata($post);
             include Wrapper\template_path();
           ?>
         </main><!-- /.main -->
