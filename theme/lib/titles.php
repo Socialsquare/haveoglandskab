@@ -102,3 +102,16 @@ function header_image() {
     return $default;
   }
 }
+
+function buttons() {
+  $buttons = get_field('buttons');
+  if(is_tax('area') || is_tax('sector')) {
+    $url = get_post_type_archive_link('udstillere');
+    $buttons .= '<a class="btn btn-white" href="' . $url . '">Se alle udstillere</a>';
+  }
+  if(!empty($buttons)) {
+    return '<div class="jumbo__buttons">' . $buttons . '</div>';
+  } else {
+    return '';
+  }
+}

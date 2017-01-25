@@ -8,9 +8,7 @@
         <div class="jumbo__text"><?= Titles\sub_title(); ?> </div>
       </div>
     </div>
-    <?php if(get_field('buttons')) {
-      echo '<div class="jumbo__buttons">' . get_field('buttons') . '</div>';
-    }?>
+    <?= Titles\buttons(); ?>
   </div>
   <svg class="jumbo__separator" viewBox="0 0 1440 45"
       xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
