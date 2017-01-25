@@ -1,21 +1,21 @@
 <?php // get_search_form(); ?>
 
-<div class="filter-bar">
-  <?php
-  $taxonomies = get_object_taxonomies('udstillere', 'objects');
-  
-  foreach ($taxonomies as $taxonomy) {
-    $terms = get_terms( array('taxonomy' => $taxonomy->name) );
-    if(count($terms) > 0) echo '<h4 class="filter-bar__header">Filtrér efter '.strtolower($taxonomy->label).'</h4>';
-    foreach ($terms as $term) {
-      echo
-      "<a class='btn btn-white-flat filter-bar__btn' href='/{$taxonomy->rewrite['slug']}/{$term->slug}'>
-        {$term->name}
-      </a>";
-    }
+<?php
+$taxonomies = get_object_taxonomies('udstillere', 'objects');
+
+foreach ($taxonomies as $taxonomy) {
+  echo '<div class="filter-bar">';
+  $terms = get_terms( array('taxonomy' => $taxonomy->name) );
+  if(count($terms) > 0) echo '<h3 class="filter-bar__header">Filtrér efter '.strtolower($taxonomy->label).'</h3>';
+  foreach ($terms as $term) {
+    echo
+    "<a class='btn btn-white-flat filter-bar__btn' href='/{$taxonomy->rewrite['slug']}/{$term->slug}'>
+      {$term->name}
+    </a>";
   }
-  ?>
-</div>
+  echo '</div>';
+}
+?>
 
 <h3>Alle udstillere</h3>
 <?php
